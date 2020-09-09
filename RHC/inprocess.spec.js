@@ -50,7 +50,7 @@ describe('Dataingest creation ', () => {
   cy.wait(2000);
   cy.get('[type=checkbox]:eq(0)', { timeout: 5000}).check({force: true});
   cy.get('div.ng-star-inserted > .mat-focus-indicator > .mat-button-wrapper > .mat-icon', { timeout: 2000}).click();
-  cy.wait(8000)
+  cy.wait(10000)
   cy.get('.matbutton > .mat-button-wrapper', { timeout: 2000}).contains(' Complete').click({force: true});
   cy.wait(10000);
   }

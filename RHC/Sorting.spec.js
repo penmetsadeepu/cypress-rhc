@@ -6,22 +6,22 @@ describe('RHC Login ', () => {
       cy.get('#username').type('bb');
       cy.get('#password').type('bb');
       cy.get('.submit').click();
-      cy.wait(5000);
+      cy.wait(4000);
     });
 it('Search for a  Patients with FirstName', () => {
     cy.get('span.mat-button-wrapper').contains('Patient').click();
     cy.wait(1000);
     cy.get('a[href*="#/patients/allpatients"]').click({force: true});
-    cy.wait(5000);  
+    cy.wait(2000);  
     
     /*//Searching with Patient Name
-    //cy.get('.mat-form-field:eq(0)').type('RHH').click({force: true});
-    //cy.wait(2000);
+    cy.get('.mat-form-field:eq(0)').type('RHH').click({force: true});
+    cy.wait(2000);
     
     //Searching with First Name
-    cy.get('.mat-form-field:eq(1)').type('rvFd913').click({force: true});
-    cy.wait(2000);
-    cy.get('[type=checkbox]:eq(0)').check({force: true});
+    //cy.get('.mat-form-field:eq(1)').type('rvFd913').click({force: true});
+    //cy.wait(2000);
+    //cy.get('[type=checkbox]:eq(0)').check({force: true});
 
     //Searching with Second Name
     cy.get('.mat-form-field:eq(2)').type('s20').click({force: true});
@@ -29,23 +29,24 @@ it('Search for a  Patients with FirstName', () => {
     
     
     //Searching with Date
-    //cy.get('[placeholder = "From"]').type('Aug 15, 2010');
-    //cy.get('[placeholder = "To"]').type('Aug 15, 2020').click({multiple: true});
-    //cy.get('[data-layer="Content"]').type('Aug 15, 2020').click({force: true});
+    cy.get('[placeholder = "From"]').type('Aug 15, 2010');
+    cy.get('[placeholder = "To"]').type('Aug 15, 2020').click({force: true});
+    
     
             
     //Searching with username & note
-   //cy.get('[placeholder = "User Name"]').type('bb').click();
+    //cy.get('[placeholder = "User Name"]').type('bb').click();
     //cy.wait(1000);
     //cy.get('[placeholder = "Note"]').type('cypress').click({force: true});
     //cy.wait(2000);
-    //cy.get('[data-layer="Content"]').type('cypress').click({force: true});
+    
     
     //Searching with Payment Type
     //cy.get('.mat-form-field:eq(10)').type('Private Pay').click();
     //cy.wait(2000); 
 
 })
+
 
 
 //Sorting on available columns
@@ -86,10 +87,12 @@ it('Search for a  Patients with FirstName', () => {
     //Sorting with First Name
     cy.get('.cdk-column-payment > .mat-sort-header-container > .mat-sort-header-button').contains('Payment').click();
     cy.wait(2000);
-})*/ 
+})*/
 
 
-it('Items per page & Pagnation', () => {
+
+/*it('Items per page & Pagnation', () => {
+
 
 
     cy.get('span.mat-button-wrapper').contains('Patient').click();
@@ -98,30 +101,22 @@ it('Items per page & Pagnation', () => {
     cy.wait(5000);  
     cy.get('.mat-select-arrow').click();
     cy.wait(1000);
-    cy.get('span.mat-option-text').contains('5').click({multiple: true});
+    cy.get('span.mat-option-text').contains('10').click({multiple: true});
 
-    //cy.get('.mat-paginator-range-label').should('include.text',' 1 – 10 of 126 ');
-    //cy.get('.mat-paginator-navigation-next').click();
-    //cy.get('.mat-paginator-range-label').should('include.text',' 11 – 20 of 126 ');
-    //cy.get('.mat-paginator-navigation-previous').click();
-    //cy.get('.mat-paginator-range-label').should('include.text',' 1 – 10 of 126 ');
-
-})
-
-
-/*it('Pagination', () => {
-    cy.get('span.mat-button-wrapper').contains('Patient').click();
-    cy.wait(1000);
-    cy.get('a[href*="#/patients/allpatients"]').click({force: true});
-    cy.wait(5000);  
-    //cy.get('.mat-focus-indicator.mat-paginator-navigation-next.mat-icon-button.mat-button-base').contains('Next page').click();
-    //cy.get('.mat-focus-indicator.mat-paginator-navigation-next.mat-icon-button.mat-button-base').contains('Previous page').click();
+    cy.get('.mat-paginator-range-label').should('include.text',' 1 – 10 of 126 ');
     cy.get('.mat-paginator-navigation-next').click();
+    cy.get('.mat-paginator-range-label').should('include.text',' 11 – 20 of 126 ');
     cy.get('.mat-paginator-navigation-previous').click();
+    cy.get('.mat-paginator-range-label').should('include.text',' 1 – 10 of 126 ');
+
 })*/
 
 
+
+
+
 })
+
 
 
 

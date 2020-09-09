@@ -7,7 +7,7 @@ describe('My Patients Tab verification ', () => {
       cy.get('.submit').click();
       cy.wait(30000);
     })
-    it('Patient Move to Mypatient tab by admin User', () =>{
+   /* it('Patient Move to Mypatient tab by admin User', () =>{
       cy.get('mat-list-option.mat-list-item.mat-list-option.mat-focus-indicator.mat-accent.ng-star-inserted', { timeout: 5000}).find('.mat-list-item-content > .mat-list-text > [fxlayout="row"] > .taskalias').as('include.text',' Verify Eligibility RHC ')
       cy.wait(8000)
       cy.contains(' Verify Eligibility RHC ').click({ multiple: true });
@@ -80,18 +80,21 @@ describe('My Patients Tab verification ', () => {
    cy.get('.mat-button-wrapper', { timeout: 5000}).contains('Claim', { timeout: 5000}).click();
    cy.get('.mat-button-wrapper', { timeout: 5000}).contains('Save', { timeout: 5000}).click();
    cy.wait(10000);
-  })
+  })*/
 });
 describe('My Patients Tab verification ', () => {
 it('Mypatient tab of admin User', () =>{
 cy.get('span.mat-button-wrapper').contains('Patients', { timeout: 5000}).click();
 cy.wait(5000);
-cy.get('[href="#/patients/mypatients"]', { timeout: 10000}).click({ multiple: true });
+cy.get('[href="#/patients/mypatients"]', { timeout: 10000}).click({ force: true });
 cy.wait(3000);
 cy.get('.mat-paginator-page-size-label', { timeout: 5000}).should('include.text',' Items per page: ')
-cy.get('.mat-select-value-text.ng-tns-c170-5.ng-star-inserted', { timeout: 5000}).click({force: true});
-cy.get('.mat-option-text:eq(1)').click({ multiple: true });
-cy.get('.mat-paginator-range-label').as('include.text' , ' 1 – 10 ')
-cy.wait(5000);
+//cy.get('.mat-select-value-text.ng-tns-c170-5.ng-star-inserted', { timeout: 5000}).click({force: true});
+//cy.get('.mat-option-text:eq(1)').click({ multiple: true });
+//cy.get('.mat-paginator-range-label').as('include.text' , ' 1 – 10 ')
+cy.get('.mat-select-arrow').click();
+    cy.wait(1000);
+    cy.get('span.mat-option-text').contains('10').click({multiple: true});
+cy.wait(2000);
 });
 });
