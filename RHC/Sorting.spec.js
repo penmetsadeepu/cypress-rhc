@@ -13,6 +13,7 @@ it('Search for a  Patients with FirstName', () => {
     cy.wait(1000);
     cy.get('a[href*="#/patients/allpatients"]').click({force: true});
     cy.wait(2000);  
+    ode
     
     /*//Searching with Patient Name
     cy.get('.mat-form-field:eq(0)').type('RHH').click({force: true});
@@ -29,15 +30,18 @@ it('Search for a  Patients with FirstName', () => {
     
     
     //Searching with Date
+    cy.viewport(1280, 800)
     cy.get('[placeholder = "From"]').type('Aug 15, 2010');
-    cy.get('[placeholder = "To"]').type('Aug 15, 2020').click({force: true});
-    
+    cy.get('.mat-form-field:eq(4)').type('Aug 15, 2020').click({force: true});
+    cy.wait(3000);
     
             
     //Searching with username & note
-    //cy.get('[placeholder = "User Name"]').type('bb').click();
-    //cy.wait(1000);
-    //cy.get('[placeholder = "Note"]').type('cypress').click({force: true});
+    cy.viewport(1280, 800);
+    cy.get('[placeholder = "User Name"]').type('bb').click();
+    cy.wait(1000);
+    cy.get('.mat-form-field:eq(9)').type('new note').click({force: true});
+   
     //cy.wait(2000);
     
     
