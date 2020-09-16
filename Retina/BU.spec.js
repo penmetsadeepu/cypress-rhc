@@ -8,7 +8,7 @@ describe('Platform Login ', () => {
       cy.wait(7000);
     });
 
-    /*it('Creating the BU users', () => {
+    it('Creating the BU users', () => {
     cy.get('button').contains('menu').click();
     cy.get('button').contains('Monitor').click();
     cy.get('span.mat-button-wrapper').contains('Settings').click();
@@ -25,7 +25,7 @@ describe('Platform Login ', () => {
     cy.get('[placeholder = "Search & enter"]').type('cypress1').type('{enter}');
     cy.wait(1000);
     cy.get('td.mat-cell').should('include.text', 'Cypress1')
-    })*/
+    })
 
 
      //Edit the BU user
