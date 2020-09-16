@@ -19,17 +19,18 @@ describe('Platform Login ', () => {
     cy.wait(2000);
     cy.get('span.mat-button-wrapper').contains('Create').click();
     cy.wait(1000);
-    cy.get('[placeholder = "BU Name"]').type('CypressBU');
+    cy.get('[placeholder = "BU Name"]').type('CypressBU1');
     cy.get('[placeholder = "BU Description"]').type('Automation');
     cy.get('span.mat-button-wrapper').contains('Save').click();
-    cy.get('[placeholder = "Search & enter"]').type('cypressBU').type('{enter}');
+    cy.wait(2000)
+    cy.get('[placeholder = "Search & enter"]').type('cypressBU1').type('{enter}');
     cy.wait(1000);
-    cy.get('td.mat-cell').should('include.text', 'CypressBU')
+    cy.get('td.mat-cell').should('include.text', 'CypressBU1')
     })
 
 
      //Edit the BU user
-    it('Creating the BU users', () => {
+    it('Edit the BU users', () => {
       cy.get('button').contains('menu').click();
       cy.get('button').contains('Monitor').click();
       cy.get('span.mat-button-wrapper').contains('Settings').click();
@@ -40,13 +41,14 @@ describe('Platform Login ', () => {
       cy.wait(2000);
       cy.get('[placeholder = "Search & enter"]').type('cypressBU').type('{enter}');
       cy.wait(3000);
-      cy.get('.mat-checkbox-inner-container.mat-checkbox-inner-container-no-side-margin').click();
+      cy.get('.mat-checkbox-inner-container.mat-checkbox-inner-container-no-side-margin:eq(0)').click();
       cy.wait(1000);
       cy.get('span.mat-button-wrapper').contains('Edit').click();
-      cy.wait(1000);
-      cy.get('[placeholder = "BU Name"]').clear().type('Cypress1');
+      cy.wait(3000);
+      cy.get('[placeholder = "BU Name"]').clear().type('Cypress10');
       cy.get('[placeholder = "BU Description"]').clear().type('Automation');
       cy.get('span.mat-button-wrapper').contains('Save').click();
+      cy.wait(2000);
       cy.get('[placeholder = "Search & enter"]').type('cypress1').type('{enter}');
       cy.wait(1000);
       cy.get('td.mat-cell').should('include.text', 'Cypress1')
@@ -64,7 +66,7 @@ describe('Platform Login ', () => {
     cy.wait(2000);
     cy.get('[placeholder = "Search & enter"]').type('cypress1').type('{enter}');
     cy.wait(3000);
-    cy.get('.mat-checkbox-inner-container.mat-checkbox-inner-container-no-side-margin').click();
+    cy.get('.mat-checkbox-inner-container.mat-checkbox-inner-container-no-side-margin:eq(0)').click();
     cy.wait(1000);
     cy.get('span.mat-button-wrapper').contains('Delete').click();
     cy.get('span.mat-button-wrapper').contains('Yes').click();
