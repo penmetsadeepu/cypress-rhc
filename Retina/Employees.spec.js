@@ -7,7 +7,7 @@ describe('Platform Login ', () => {
       cy.get('.submit').click();
       cy.wait(15000);
     });
-/*it('Creating the users', () => {
+it('Creating the users', () => {
     cy.get('button').contains('menu').click();
     cy.get('button').contains('Monitor').click();
     cy.get('span.mat-button-wrapper').contains('Settings').click();
@@ -18,7 +18,7 @@ describe('Platform Login ', () => {
     cy.wait(3000);
     cy.get('span.mat-button-wrapper').contains('Create').click();
     cy.wait(1000);
-    cy.get('[placeholder = "EmployeeID"]').type('Cypress111');
+    cy.get('[placeholder = "EmployeeID"]').type('Cypress21');
     cy.get('[placeholder = "CompanyName / Domain Name"]').type('Automation');
     cy.get('[placeholder = "Username"]').type('Cypress00');
     cy.get('[placeholder = "FirstName"]').type('Cypress00');
@@ -30,9 +30,9 @@ describe('Platform Login ', () => {
     cy.get('span.mat-button-wrapper').contains('Save').click();
     //cy.get('span.mat-button-wrapper').contains('Cancel').click();
     cy.wait(2000);
-    cy.get('input[placeholder="Search & enter"]').type('Cypress111').type('{enter}');
+    cy.get('input[placeholder="Search & enter"]').type('Cypress21').type('{enter}');
     cy.wait(2000);
-    cy.get('td.mat-cell').should('include.text', 'Cypress111');
+    cy.get('td.mat-cell').should('include.text', 'Cypress21');
     cy.wait(5000);
 })
 
@@ -46,13 +46,13 @@ describe('Platform Login ', () => {
       cy.wait(3000);
       cy.get('button.mat-menu-item').contains('Employees').click();
       cy.wait(3000);
-      cy.get('input[placeholder="Search & enter"]').type('Cypress111').type('{enter}');
+      cy.get('input[placeholder="Search & enter"]').type('Cypress21').type('{enter}');
       cy.wait(2000);
       cy.get('.mat-checkbox-inner-container.mat-checkbox-inner-container-no-side-margin').click(); 
       cy.get('span.mat-button-wrapper').contains('Edit').click();
       cy.wait(1500);
       cy.get('[placeholder = "CompanyName / Domain Name"]').clear().type('Automation1');
-      cy.get('[placeholder = "Username"]').clear().type('Cypress');
+      cy.get('[placeholder = "Username"]').clear().type('Cypress_0');
       cy.get('[placeholder = "FirstName"]').clear().type('Cypress');
       cy.get('[placeholder = "LastName"]').clear().type('Auto');
       cy.get('[placeholder = "Role"]').clear().type('Testing');
@@ -61,6 +61,11 @@ describe('Platform Login ', () => {
       cy.get('[placeholder = "DeviceModel / Machine Name"]').clear().type('123/Sample');
       cy.get('span.mat-button-wrapper').contains('Save').click();
       cy.wait(2000);
+      cy.get('input[placeholder="Search & enter"]').type('Cypress_0').type('{enter}');
+      cy.wait(2000);
+      cy.get('td.mat-cell').should('include.text', 'Cypress_0');
+      cy.wait(5000);
+
     })
 
 
@@ -74,10 +79,13 @@ describe('Platform Login ', () => {
       cy.wait(3000);
       cy.get('button.mat-menu-item').contains('Employees').click();
       cy.wait(3000);
-      cy.get('input[placeholder="Search & enter"]').type('Cypress111').type('{enter}');
+      cy.get('input[placeholder="Search & enter"]').type('Cypress21').type('{enter}');
       cy.wait(2000);
       cy.get('.mat-checkbox-inner-container.mat-checkbox-inner-container-no-side-margin').click(); 
-      cy.get('span.mat-button-wrapper').contains('Delete').click();    
+      cy.get('span.mat-button-wrapper').contains('Delete').click();  
+      cy.get('input[placeholder="Search & enter"]').type('Cypress21').type('{enter}');
+      cy.wait(2000);
+
     })
 
     //Import users
@@ -94,7 +102,7 @@ describe('Platform Login ', () => {
       cy.wait(3000);
       const yourFixturePath = 'Hierarchy_employees.csv';
       cy.get('input[type=file]').attachFile(yourFixturePath);
-      cy.wait(4000);
+      cy.wait(8000);
       cy.get('input[placeholder="Search & enter"]').type('deepthi_cypress').type('{enter}');
       cy.wait(2000);
       cy.get('td.mat-cell').should('include.text', 'deepthi_cypress');
@@ -115,7 +123,7 @@ describe('Platform Login ', () => {
       cy.get('p-fileupload.ng-star-inserted').contains('Import Hierarchy').click({force: true});
       cy.wait(3000);
       const yourFixturePath1 = 'Hierarchy_Mapping.csv';
-      cy.get('input[type=file]').attachFile(yourFixturePath);
+      cy.get('input[type=file]').attachFile(yourFixturePath1);
       cy.wait(4000);
     })
 
@@ -131,10 +139,10 @@ describe('Platform Login ', () => {
       cy.get('button.mat-menu-item').contains('Employees').click();
       cy.wait(3000);
       cy.get('span.mat-button-wrapper').contains('Export').click();
-    })*/
+    })
 
 
-    it('Verify if EmployeeAlias column is not displayed', () => {
+    /*it('Verify if EmployeeAlias column is not displayed', () => {
       cy.get('button').contains('menu').click();
       cy.get('button').contains('Monitor').click();
       cy.get('span.mat-button-wrapper').contains('Settings').click();
@@ -147,10 +155,8 @@ describe('Platform Login ', () => {
       //cy.get('.ng-star-inserted').should('not.have.value', 'EmployeeAlias');
       cy.get('.ng-star-inserted').contains('EmployeeAlias').should('not.Exists');
       //cy.get('.ng-star-inserted').contains('EmployeeAlias');
-      
-      
-
-    })    
+ 
+    })*/  
  
 })
 

@@ -60,13 +60,13 @@ describe('Platform Login ', () => {
       cy.get('[placeholder = "Productivity"]').click();
       //cy.get('.mat-option-text').contains('Yes').click();
       cy.get('.mat-option-text').contains('No').click();
-      cy.get('[placeholder = "Application Name"]').clear().type('Cypress1');
+      cy.get('[placeholder = "Application Name"]').clear().type('Cypress_Aytomation');
       cy.get('span.mat-button-wrapper').contains('Save').click();
       cy.wait(4000);
       //cy.get('span.mat-button-wrapper').contains('Cancel').click();
-      cy.get('input[placeholder="Search & enter"]').type('10').type('{enter}');
+      cy.get('input[placeholder="Search & enter"]').type('Cypress_Aytomation').type('{enter}');
       cy.wait(4000);
-      cy.get('td.mat-cell').should('include.text', '10');
+      cy.get('td.mat-cell').should('include.text', 'Cypress_Aytomation');
       cy.wait(3000);
     })
 

@@ -19,12 +19,12 @@ describe('Platform Login ', () => {
     cy.wait(2000);
     cy.get('span.mat-button-wrapper').contains('Create').click();
     cy.wait(1000);
-    cy.get('[placeholder = "BU Name"]').type('Cypress1');
+    cy.get('[placeholder = "BU Name"]').type('CypressBU');
     cy.get('[placeholder = "BU Description"]').type('Automation');
     cy.get('span.mat-button-wrapper').contains('Save').click();
-    cy.get('[placeholder = "Search & enter"]').type('cypress1').type('{enter}');
+    cy.get('[placeholder = "Search & enter"]').type('cypressBU').type('{enter}');
     cy.wait(1000);
-    cy.get('td.mat-cell').should('include.text', 'Cypress1')
+    cy.get('td.mat-cell').should('include.text', 'CypressBU')
     })
 
 
@@ -38,7 +38,7 @@ describe('Platform Login ', () => {
       cy.wait(2000);
       cy.get('button.mat-menu-item').contains('Business Units').click();
       cy.wait(2000);
-      cy.get('[placeholder = "Search & enter"]').type('cypress').type('{enter}');
+      cy.get('[placeholder = "Search & enter"]').type('cypressBU').type('{enter}');
       cy.wait(3000);
       cy.get('.mat-checkbox-inner-container.mat-checkbox-inner-container-no-side-margin').click();
       cy.wait(1000);
@@ -67,6 +67,9 @@ describe('Platform Login ', () => {
     cy.get('.mat-checkbox-inner-container.mat-checkbox-inner-container-no-side-margin').click();
     cy.wait(1000);
     cy.get('span.mat-button-wrapper').contains('Delete').click();
-   cy.get('span.mat-button-wrapper').contains('Yes').click();
+    cy.get('span.mat-button-wrapper').contains('Yes').click();
+    cy.get('[placeholder = "Search & enter"]').type('cypress1').type('{enter}');
+    cy.wait(1000);
+
 })
 })
