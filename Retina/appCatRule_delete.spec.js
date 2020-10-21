@@ -34,7 +34,7 @@ describe('App Categarization Rules', () => {
             cy.get('[placeholder="Game Grouping"]', { timeout: 2000 }).type('samplebrowser');
             cy.get('[placeholder="Game Points"]', { timeout: 2000 }).type('12');
             cy.get('span.mat-button-wrapper').contains('Save').click();
-            cy.wait(4000);
+            cy.wait(8000);
         }
         cy.get('.ui-inputtext').type('testnwapp')
         cy.get('.ui-button-icon-left').click();

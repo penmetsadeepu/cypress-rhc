@@ -6,7 +6,7 @@ describe('Platform Login ', () => {
       cy.get('#password').type('admin123');
       cy.get('.submit').click();
       cy.wait(10000);
-    });
+    })
 
     it('Creating the Application users', () => {
     cy.get('button').contains('menu').click();
@@ -36,20 +36,8 @@ describe('Platform Login ', () => {
     cy.wait(1000);
     cy.get('td.mat-cell').should('include.text', 'Cypress2');
     cy.wait(8000);
-    })
 
     //Edit the user
-  it('Editing the Application users', () => {
-      cy.get('button').contains('menu').click();
-      cy.get('button').contains('Monitor').click();
-      cy.get('span.mat-button-wrapper').contains('Settings').click();
-      cy.wait(1000);
-      cy.get('button.mat-menu-item').contains('Retina').click();
-      cy.wait(2000);
-      cy.get('button.mat-menu-item').contains('Applications').click();
-      cy.wait(20000);
-      cy.get('input[placeholder="Search & enter"]').type('Cypress2').type('{enter}');
-      cy.wait(2000);
       cy.get('.mat-checkbox-inner-container.mat-checkbox-inner-container-no-side-margin:eq(0)').click(); 
       cy.get('span.mat-button-wrapper').contains('Edit').click();
       cy.wait(2000);
@@ -68,64 +56,13 @@ describe('Platform Login ', () => {
       cy.wait(4000);
       cy.get('td.mat-cell').should('include.text', 'Cypress_Aytomation');
       cy.wait(3000);
-    })
-
 
     //Delete the User
-    it('Delete the Application users', () => {
-      cy.get('button').contains('menu').click();
-      cy.get('button').contains('Monitor').click();
-      cy.get('span.mat-button-wrapper').contains('Settings').click();
-      cy.wait(1000);
-      cy.get('button.mat-menu-item').contains('Retina').click();
-      cy.wait(2000);
-      cy.get('button.mat-menu-item').contains('Applications').click();
-      cy.wait(20000);
-      cy.get('input[placeholder="Search & enter"]').type('Cypress10').type('{enter}');
-      cy.wait(2000);
       cy.get('.mat-checkbox-inner-container.mat-checkbox-inner-container-no-side-margin:eq(0)').click(); 
       cy.get('span.mat-button-wrapper').contains('Delete').click();
       cy.get('input[placeholder="Search & enter"]').type('Cypress10').type('{enter}');
       cy.wait(2000);
     })
-
-
-    //Import
-  it('Import Application', () => { 
-      cy.get('button').contains('menu').click();
-      cy.get('button').contains('Monitor').click();
-      cy.get('span.mat-button-wrapper').contains('Settings').click();
-      cy.wait(1000);
-      cy.get('button.mat-menu-item').contains('Retina').click();
-      cy.wait(2000);
-      cy.get('button.mat-menu-item').contains('Applications').click();
-      cy.wait(20000);
-      cy.get('span.ui-button-text.ui-clickable').contains('Import').click({force: true});
-      cy.wait(3000);
-      const yourFixturePath = 'application-profiles-1600059383374.csv';
-      cy.get('input[type=file]').attachFile(yourFixturePath);
-      cy.wait(8000);
-      cy.get('input[placeholder="Search & enter"]').type('safari.exe').type('{enter}');
-      cy.wait(3000);
-      cy.get('td.mat-cell').should('include.text', 'safari.exe');
-      cy.wait(3000);
-  })
-   
-  //Export
-  it('Export Application', () => { 
-    cy.get('button').contains('menu').click();
-    cy.get('button').contains('Monitor').click();
-    cy.get('span.mat-button-wrapper').contains('Settings').click();
-    cy.wait(1000);
-    cy.get('button.mat-menu-item').contains('Retina').click();
-    cy.wait(2000);
-    cy.get('button.mat-menu-item').contains('Applications').click();
-    cy.wait(20000);
-    cy.get('span.mat-button-wrapper').contains('Export').click();
-    cy.wait(3000);
-  })
-
-
 
 })
 
