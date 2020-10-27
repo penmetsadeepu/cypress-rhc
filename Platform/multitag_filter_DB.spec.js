@@ -134,7 +134,8 @@ describe('login page', () => {
                     cy.wait(3000);
                    cy.get('[placeholder= "Operator"]').click();
                    cy.get(1000);
-                   cy.get('span.mat-option-text').contains('GREATER_THAN').click();
+                   //cy.get('span.mat-option-text').contains('GREATER_THAN').click();
+                   cy.get('span.mat-option-text').contains('BETWEEN').click();
                    cy.wait(2000);
                    cy.get('label.mat-checkbox-layout').contains('Enable MultiTag').click();
                    cy.get('span.mat-button-wrapper').contains('add_circle_outline').click();
@@ -158,7 +159,16 @@ describe('login page', () => {
                    cy.wait(4000);
                    cy.get('[placeholder="Duration"]').click();
                    cy.wait(1000);
-                   cy.get('span.mat-option-text').contains(' LAST_YEAR ').click();
+                   //cy.get('span.mat-option-text').contains(' LAST_YEAR ').click();
+                   cy.get('span.mat-option-text').contains('CUSTOM_DATE').click();
+                   cy.wait(1000);
+                   //cy.get('.ui-button-icon-left.ui-clickable.pi.pi-calendar').click({multiple: true});
+                   //cy.get('input[placeholder="From Date"]').click()
+                   //cy.wait(1000);
+                   cy.get('.tagfilter > .ui-inputtext').click();
+                   cy.get('.ui-datepicker-month').click({multiple: true});
+                   //cy.get('option.ng-star-inserted').contains('September').click({force: true});
+                   cy.get('select').select('8,September');
                    cy.get('span.mat-button-wrapper').contains('play_arrow').click();
                    cy.wait(4000);
                    cy.get('span.mat-button-wrapper').contains('SAVE').click();
